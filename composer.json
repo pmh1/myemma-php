@@ -1,0 +1,31 @@
+{
+    "name": "pmh1/myemma-php",
+    "description": "MyEmma API Wrapper",
+    "keywords": [ "MyEmma", "Emma", "api" ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philip Harvey",
+            "email": "pmh1@mac.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Emma\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "Emma\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable"
+}
