@@ -86,7 +86,7 @@ class Client
      }
 
      $this->client = $client ?: new GuzzleClient();
-     $this->clientOptions = $clientOptions;
+     $this->clientOptions = array_merge($this->clientOptions, $clientOptions);
      $this->wrapResponse = $wrapResponse;
    }
 
@@ -126,7 +126,7 @@ class Client
    */
   protected function generateUrl($endpoint, $queryString = null)
   {
-    $url = $this->endpointUrl . ( substr($endpoint, 0, 1) == '/' ? substr($endpoint, 1) : $endpoint );
+    $url = $this->endpointUrl . $this->accountId . '/' . ( substr($endpoint, 0, 1) == '/' ? substr($endpoint, 1) : $endpoint );
     return $url . ( is_null($queryString) ? '' : '?'.$queryString );
   }
 
