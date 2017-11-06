@@ -8,6 +8,13 @@ use Psr\Http\Message\ResponseInterface;
 use Emma\Exceptions\BadRequest;
 use Emma\Exceptions\InvalidArgument;
 
+/**
+ * Base Client to handle all HTTP requests to Emma
+ * @license MIT
+ * @copyright 2017 Philip Harvey
+ * @author Philip Harvey <philip at bartndrs dot com>
+ * @package Http
+ */
 class Client
 {
   /**

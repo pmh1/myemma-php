@@ -9,8 +9,10 @@ use Exception;
 
 /**
  * Psr7 Response Wrapper with conviences methods
- * @package Services
- * @category API
+ * @license MIT
+ * @copyright 2017 Philip Harvey
+ * @author Philip Harvey <philip at bartndrs dot com>
+ * @package Http
  */
 
 class Response implements ResponseInterface, ArrayAccess
