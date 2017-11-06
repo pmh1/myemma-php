@@ -15,17 +15,15 @@ use Emma\Http\Response;
 class SignupForms extends Resource
 {
   /**
-   * Get all Signup SignupForms
+   * Get all SignupForms
    * @param array $params Optional expected paramaters are ['count', 'start', 'end']
-   * @return Http\Response
+   * @return Http\Response|ResponseInterface
    */
   public function all($params = [])
   {
-    $options = [];
-    if (count($params) > 0)
-    {
-      $options['query'] = $params;
-    }
+    $options = [
+      'query' => $params
+    ];
     return $this->client->request('get', 'signup_forms', $options);
   }
 }
