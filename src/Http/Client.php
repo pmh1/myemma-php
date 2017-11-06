@@ -64,13 +64,13 @@ class Client
    public function __construct($accountId, $auth = [], $client = null, $clientOptions = [], $wrapResponse = true)
    {
 
-     if (!isset($accountId))
+     if (!isset($accountId) || empty($accountId))
      {
-       throw new InputArgument("Auth Error: accountId not set");
+       throw new InvalidArgument("Auth Error: accountId not set");
      }
      $this->accountId = $accountId;
 
-     if (is_array($auth) && count($auth) == 2)
+     if (is_array($auth) && count($auth) == 2 && !empty(array_filter($auth, 'strlen')))
      {
        if (array_key_exists('public_key', $auth))
        {
@@ -82,7 +82,7 @@ class Client
        }
      }
      else {
-       throw new InputArgument('No Authorization Provided or Incorrect options used. should be [\'public_key\' => \'\', \'private_key\'=> \'\'] or [\'public_key\', \'private_key\']');
+       throw new InvalidArgument('No Authorization Provided or Incorrect options used. should be [\'public_key\' => \'\', \'private_key\'=> \'\'] or [\'public_key\', \'private_key\']');
      }
 
      $this->client = $client ?: new GuzzleClient();
