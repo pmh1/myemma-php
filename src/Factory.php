@@ -45,7 +45,7 @@ class Factory
    * @param Client $client
    * @param array $clientOptions Guzzle Options to be sent with requests
    * @param bool $wrapResponse Use Emma\Http\Response (true) or GuzzleHttp\Psr7\Response (false)
-   @static
+   * @static
    */
    public static function create($accountId, $publicKey, $privateKey, $client = null, $clientOptions = [], $wrapResponse = true)
    {
