@@ -3,7 +3,6 @@
 namespace Emma\Http;
 
 use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Emma\Exceptions\BadRequest;
 use Emma\Exceptions\InvalidArgument;
