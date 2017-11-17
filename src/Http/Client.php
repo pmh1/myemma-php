@@ -104,7 +104,7 @@ class Client
     $url = $this->generateUrl($endpoint, $queryString);
 
     $options = array_merge($this->clientOptions, $options);
-    $options["headers"]["User-Agent"] = $this->user_agent;
+    $options["headers"]["User-Agent"] = $this->userAgent;
 
     try {
       if ($this->wrapResponse === false) {
