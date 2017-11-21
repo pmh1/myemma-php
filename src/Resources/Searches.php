@@ -36,7 +36,7 @@ class Searches extends Resource
     $options = [
       'query' => $params
     ];
-    return $this->client->request('get', "search/{$searchId}", $options);
+    return $this->client->request('get', "searches/{$searchId}", $options);
   }
 
   /**
@@ -75,7 +75,7 @@ class Searches extends Resource
    */
   public function delete($searchId)
   {
-    return $this->client->request('delete', "search/{$searchId}");
+    return $this->client->request('delete', "searches/{$searchId}");
   }
 
   /**
@@ -89,6 +89,6 @@ class Searches extends Resource
     $options = [
       'query' => $params
     ];
-    return $this->client->request('get', "search/{$searchId}/members", $options);
+    return $this->client->request('get', "searches/{$searchId}/members", $options);
   }
 }
