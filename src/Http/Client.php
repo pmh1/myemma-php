@@ -49,7 +49,7 @@ class Client
    * UserAgent used with API calls
    * @var string
    */
-  private $userAgent = 'MyEmma_PHP/1.0.0-dev1 (https://github.com/pmh1/myemma-php)';
+  private $userAgent = 'MyEmma_PHP/1.0.0-rc1 (https://github.com/pmh1/myemma-php)';
 
   /**
    * Setup Emma Client
@@ -83,6 +83,9 @@ class Client
      else {
        throw new InvalidArgument('No Authorization Provided or Incorrect options used. should be [\'public_key\' => \'\', \'private_key\'=> \'\'] or [\'public_key\', \'private_key\']');
      }
+
+     // set base uri for API calls
+     $this->clientOptions['base_uri'] = $this->endpointUrl . $this->accountId . '/';
 
      $this->client = $client ?: new GuzzleClient();
      $this->clientOptions = array_merge($this->clientOptions, $clientOptions);
@@ -125,7 +128,7 @@ class Client
    */
   protected function generateUrl($endpoint, $queryString = null)
   {
-    $url = $this->endpointUrl . $this->accountId . '/' . ( substr($endpoint, 0, 1) == '/' ? substr($endpoint, 1) : $endpoint );
+    $url = str_replace('{{accountId}}', $this->accountId, substr($endpoint, 0, 1) == '/' ? substr($endpoint, 1) : $endpoint );
     return $url . ( is_null($queryString) ? '' : '?'.$queryString );
   }
 
