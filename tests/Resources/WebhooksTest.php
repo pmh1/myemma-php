@@ -59,7 +59,7 @@ final class WebhooksTest extends TestCase
       'url' => 'https://www.yahoo.com',
       'event' => 'mailing_finish'
     ];
-    $response = self::$emma->webhooks()->update($data);
+    $response = self::$emma->webhooks()->update(111, $data);
   }
 
   public function testDeleteWebhook()

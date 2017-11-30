@@ -83,7 +83,7 @@ final class MailingTest extends TestCase
   {
     $this->expectException(BadRequest::class);
     $data = ['recipient_emails' => ['test123@gmail.com'] ];
-    $response = self::$emma->mailings()->forward(111, $data);
+    $response = self::$emma->mailings()->forward(111, 111, $data);
   }
 
   public function testResendMailing()

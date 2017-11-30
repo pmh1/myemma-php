@@ -145,7 +145,7 @@ class Mailings extends Resource
   public function forward($mailingId, $memberId, $data = [])
   {
     $options = [
-      'json' => ['status' => $status]
+      'json' => $data
     ];
     return $this->client->request('post', "forwards/{$mailingId}/{$memberId}", $options);
   }

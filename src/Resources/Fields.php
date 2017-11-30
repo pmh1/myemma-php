@@ -49,7 +49,7 @@ class Fields extends Resource
     $options = [
       'json' => $data
     ];
-    return $this->client->request('post', "fields/{$fieldId}", $options);
+    return $this->client->request('post', "fields", $options);
   }
 
   /**
