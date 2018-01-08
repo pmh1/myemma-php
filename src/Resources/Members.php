@@ -163,7 +163,7 @@ class Members extends Resource
     $options = [
       'json' => $data
     ];
-    return $this->client->request('post', "members/{$memberId}");
+    return $this->client->request('put', "members/{$memberId}");
   }
 
   /**
